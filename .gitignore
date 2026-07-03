@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# AWS credentials and local config
+.aws/
+aws-credentials*
+credentials
+config
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+coverage/
+.serverless/
+.aws-sam/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
