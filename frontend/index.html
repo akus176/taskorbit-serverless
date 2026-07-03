@@ -1,15 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TaskOrbit</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main>
-      <h1>TaskOrbit</h1>
-    </main>
-    <script src="app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskOrbit | Galaxy Task Manager</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2.8l2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6-4.36-4.25 6.03-.88L12 2.8z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="brand-name">TaskOrbit</h1>
+            <p class="brand-subtitle">Serverless Task Manager</p>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span id="authPillText">Guest mode</span>
+          </div>
+          <button id="loginTopBtn" class="btn">Launch Login</button>
+          <button id="logoutTopBtn" class="btn secondary hidden">Logout</button>
+        </div>
+      </div>
+
+      <p class="eyebrow">Galaxy Minimal Workspace</p>
+
+      <h2 class="hero-title">
+        Organize work<br />
+        in a quiet <span class="gradient-text">orbit.</span>
+      </h2>
+
+      <p class="hero-copy">
+        A polished single-file frontend for your AWS serverless stack:
+        Cognito authentication, API Gateway endpoints, Lambda functions,
+        and DynamoDB storage.
+      </p>
+    </section>
+
+    <section class="layout">
+      <aside class="panel side-panel">
+        <div class="mini-profile">
+          <div class="avatar">★</div>
+          <div>
+            <h3 id="profileTitle" class="profile-title">Not signed in</h3>
+            <p id="profileSubtitle" class="profile-subtitle">Login to sync your tasks</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p id="totalCount" class="stat-number">0</p>
+            <p class="stat-label">Total</p>
+          </div>
+          <div class="stat-card">
+            <p id="pendingCount" class="stat-number">0</p>
+            <p class="stat-label">Pending</p>
+          </div>
+          <div class="stat-card">
+            <p id="doneCount" class="stat-number">0</p>
+            <p class="stat-label">Done</p>
+          </div>
+          <div class="stat-card">
+            <p id="highCount" class="stat-number">0</p>
+            <p class="stat-label">High</p>
+          </div>
+        </div>
+
+        <section class="side-card">
+          <div class="card-title">Stack Status</div>
+          <p class="hint" style="margin-top: 10px;">
+            API Gateway → Lambda → DynamoDB is connected. Cognito protects the task APIs.
+          </p>
+        </section>
+
+        <section class="side-card">
+          <div class="card-title">Current API</div>
+          <p id="apiUrlText" class="hint" style="margin-top: 10px; word-break: break-all;"></p>
+        </section>
+      </aside>
+
+      <section class="panel main-panel">
+        <div id="guestView" class="login-card">
+          <div class="section-head" style="margin-bottom: 0;">
+            <div>
+              <h2 class="section-title">Welcome aboard</h2>
+              <p class="section-copy">
+                Sign in with Cognito to create, view, update, and delete your tasks.
+              </p>
+            </div>
+            <span class="badge">Protected API</span>
+          </div>
+
+          <div>
+            <button id="loginMainBtn" class="btn">Login with Cognito</button>
+          </div>
+        </div>
+
+        <div id="appView" class="hidden">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Mission tasks</h2>
+              <p class="section-copy">
+                Create tasks, mark them complete, and keep your serverless workflow clean.
+              </p>
+            </div>
+            <button id="refreshBtn" class="btn secondary small">Refresh</button>
+          </div>
+
+          <form id="taskForm" class="form">
+            <input id="titleInput" class="field" type="text" placeholder="Task title" required />
+            <input id="descriptionInput" class="field" type="text" placeholder="Description" />
+            <select id="priorityInput" class="select">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+            <input id="dueDateInput" class="field" type="date" />
+            <button id="createBtn" class="btn" type="submit">Create task</button>
+          </form>
+
+          <div id="taskList" class="task-list"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="./app.js" defer></script>
+</body>
 </html>
