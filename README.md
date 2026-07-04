@@ -1,19 +1,16 @@
 # TaskOrbit - Serverless Task Manager
 
+![AWS](https://img.shields.io/badge/AWS-Serverless-232F3E?logo=amazonaws&logoColor=white)
+![JavaScript](https://img.shields.io/badge/Frontend-JavaScript-F7DF1E?logo=javascript&logoColor=000)
+![Node.js](https://img.shields.io/badge/Runtime-Node.js%2024.x-339933?logo=nodedotjs&logoColor=white)
+![Amazon S3](https://img.shields.io/badge/Hosting-S3%20%2B%20CloudFront-569A31?logo=amazons3&logoColor=white)
+![Amazon Cognito](https://img.shields.io/badge/Auth-Cognito-DD344C?logo=amazonaws&logoColor=white)
+![Amazon DynamoDB](https://img.shields.io/badge/Database-DynamoDB-4053D6?logo=amazondynamodb&logoColor=white)
+![Amazon CloudWatch](https://img.shields.io/badge/Monitoring-CloudWatch-FF4F8B?logo=amazonaws&logoColor=white)
+
 TaskOrbit is a galaxy-themed serverless task management web app built on AWS. Authenticated users can sign in, create tasks, view only their own tasks, update task status, and delete tasks.
 
 This project was built manually using the AWS Console for a cloud computing and serverless architecture assignment.
-
-## Features
-
-- User authentication with Amazon Cognito Hosted UI
-- Create, read, update, and delete task workflows
-- Per-user task isolation using Cognito JWT claims
-- Serverless REST API backed by AWS Lambda
-- DynamoDB task storage with a user-based Global Secondary Index
-- Private frontend hosting through S3 and CloudFront
-- Private Lambda networking with DynamoDB Gateway Endpoint access
-- CloudWatch dashboard, alarms, SNS notifications, and AWS Budget controls
 
 ## Tech Stack
 
@@ -28,6 +25,31 @@ This project was built manually using the AWS Console for a cloud computing and 
 | Networking | Custom VPC, private subnets, security group, DynamoDB Gateway Endpoint |
 | Monitoring | Amazon CloudWatch Dashboard, CloudWatch Alarms, SNS |
 | Cost Control | AWS Budget, Lambda Reserved Concurrency, no NAT Gateway |
+
+## Table of Contents
+
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Architecture Overview](#architecture-overview)
+- [Repository Structure](#repository-structure)
+- [API Endpoints](#api-endpoints)
+- [Security Design](#security-design)
+- [Monitoring and Cost Control](#monitoring-and-cost-control)
+- [Screenshots](#screenshots)
+- [Deployment Notes](#deployment-notes)
+- [Access Link](#access-link)
+- [Video Demo](#video-demo)
+
+## Features
+
+- User authentication with Amazon Cognito Hosted UI
+- Create, read, update, and delete task workflows
+- Per-user task isolation using Cognito JWT claims
+- Serverless REST API backed by AWS Lambda
+- DynamoDB task storage with a user-based Global Secondary Index
+- Private frontend hosting through S3 and CloudFront
+- Private Lambda networking with DynamoDB Gateway Endpoint access
+- CloudWatch dashboard, alarms, SNS notifications, and AWS Budget controls
 
 ## Architecture Overview
 
@@ -68,9 +90,6 @@ taskorbit-serverless/
 |       `-- delete-task/
 |           `-- index.mjs
 |-- docs/
-|   |-- architecture.md
-|   |-- architecture.drawio
-|   |-- architecture-diagram.png
 |   `-- monitoring.md
 |-- screenshots/
 |-- README.md
@@ -110,6 +129,8 @@ Configured alarms include:
 SNS email notifications are configured for alarm delivery. AWS Budget is configured for cost control, and Lambda Reserved Concurrency is set to reduce unexpected scaling during demo and testing.
 
 The architecture intentionally avoids a NAT Gateway to reduce recurring network costs.
+
+Additional monitoring details are available in [docs/monitoring.md](docs/monitoring.md).
 
 ## Screenshots
 
