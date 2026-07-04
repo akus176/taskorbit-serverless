@@ -162,3 +162,9 @@ For public portfolio sharing, production API and Cognito URLs in the frontend ca
 ## Access Link
 You can try the deployed TaskOrbit application here:
 [https://d1zwyx8c9laxno.cloudfront.net](https://d1zwyx8c9laxno.cloudfront.net)
+
+### Demo Account
+
+```text
+Email: demo@taskorbit.dev
+Password: TaskOrbit-Demo@2026!
