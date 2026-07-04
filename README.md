@@ -160,7 +160,8 @@ High-level deployment steps:
 For public portfolio sharing, production API and Cognito URLs in the frontend can be replaced with placeholders to avoid exposing live endpoints or incurring unexpected usage.
 
 ## Access Link
-You can try the deployed TaskOrbit application here:
+
+You can try the deployed TaskOrbit application here:  
 [https://d1zwyx8c9laxno.cloudfront.net](https://d1zwyx8c9laxno.cloudfront.net)
 
 ### Demo Account
@@ -168,3 +169,9 @@ You can try the deployed TaskOrbit application here:
 ```text
 Email: demo@taskorbit.dev
 Password: TaskOrbit-Demo@2026!
+```
+
+## Video Demo
+
+Watch the project demo here:  
+[YouTube Video Demo](https://www.youtube.com/watch?v=9-nWIFsiSdM)
