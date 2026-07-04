@@ -158,3 +158,7 @@ High-level deployment steps:
 9. Configure CloudWatch dashboard, alarms, SNS notifications, AWS Budget, and Lambda Reserved Concurrency.
 
 For public portfolio sharing, production API and Cognito URLs in the frontend can be replaced with placeholders to avoid exposing live endpoints or incurring unexpected usage.
+
+## Access Link
+You can try the deployed TaskOrbit application here:
+[https://d1zwyx8c9laxno.cloudfront.net](https://d1zwyx8c9laxno.cloudfront.net)
